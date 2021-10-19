@@ -3,10 +3,9 @@ import re
 
 greetingOptions = ["eyy","sup","howdie"]
 
-endingOptions = ["adios", "au revior","Sayonara",]
+endingOptions = ["adios", "au revior","sayonara"]
 
 jokeOptions = ["you come here often?","don't you have something else to do"]
-
 
 def chat(text):
   
@@ -26,8 +25,10 @@ def chat(text):
   for word in words:
     if word.lower() in greetingOptions:
       return random.choice(greetingOptions).capitalize()
-  if text.lower() in chattingOptions:
-    return random.choice(chattingOptions).capitalize() 
+  if text.lower() in endingOptions:
+    return random.choice(endingOptions).capitalize() 
+  if text.lower() in jokeOptions:
+    return random.choice(jokeOptions).capitalize()
   else:
     return "I'm still learning.  Try saying hello."
 
